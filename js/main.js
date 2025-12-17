@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const filesInput = document.getElementById("inputFile");
 const loader = document.getElementById("loader");
 const emailsDiv = document.getElementById("emailsDiv");
+const textArea = document.getElementById("text");
 const compteur = document.getElementById("compteur");
 const copySvg = document.getElementById("copySvg");
 const downSvg = document.getElementById("downSvg");
@@ -18,6 +19,25 @@ const parentDiv = emailsDiv.parentElement;
 const notif = document.getElementById("notif");
 const reg = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/gi;
 const caractList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzéèêëàâäôöùûüç0123456789.,!? '@ ";
+textArea.addEventListener("change", () => {
+    console.log("Changed");
+    textArea.style.display = "none";
+    loader.style.display = "flex";
+    const textBrut = textArea.value.replace(/"/gi, "").replace(/,/gi, " ").replace(/;/gi, " ");
+    let arr = textBrut.replace(/\n/g, " ").split(" ");
+    let emails = [];
+    arr.map((tx) => {
+        if (reg.test(tx)) {
+            emails.push(tx);
+            const para = document.createElement("p");
+            para.innerText = tx;
+            emailsDiv.append(para);
+            parentDiv.style.display = "flex";
+        }
+    });
+    parentDiv.style.display = "flex";
+    loader.style.display = "none";
+});
 filesInput.addEventListener("change", (e) => __awaiter(void 0, void 0, void 0, function* () {
     loader.style.display = "flex";
     const target = e.target;

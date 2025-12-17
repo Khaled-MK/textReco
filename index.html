@@ -5,9 +5,10 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
+      <title>TEXTRECO</title>
       <link rel="stylesheet" href="./css/master.css" />
    </head>
+
    <body>
       <header>
          <div class="title-div">
@@ -15,6 +16,9 @@
          </div>
       </header>
       <div class="file-div">
+         <div class="lien-div">
+            <a href="" class="">Recemmoncer</a>
+         </div>
          <label for="inputFile"
             >Selectioner des fichiers
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -22,6 +26,8 @@
             </svg>
          </label>
          <input id="inputFile" type="file" accept="image/*" multiple class="input-file" />
+
+         <textarea name="" id="text" class="text-area"></textarea>
       </div>
       <div id="loader" class="loader-div">
          <div class="loader"></div>
@@ -38,8 +44,8 @@
             <svg id="downSvg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="down-btn">
                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
             </svg>
-
-            <!-- <p>k.mellouki@gmail.com</p>
+            <!-- 
+            <p>k.mellouki@gmail.com</p>
             <p>k.mellouki@gmail.com</p>
             <p>k.mellouki@gmail.com</p>
             <p>k.mellouki@gmail.com</p>
